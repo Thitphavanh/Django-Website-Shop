@@ -6,4 +6,4 @@ def home(request):
 
 
 def about(request):
-    return HttpResponse('ABOUT PHENOMENAL')
+    return render(request, 'app_general/about.html')

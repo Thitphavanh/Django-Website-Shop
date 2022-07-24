@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Document</title>
-</head>
-<body>
-	<header style="background-color: lightgray;">
-		<a>PHENOMENAL</a>
-		<a>ALL MENU</a>
-		<a>ABOUT</a>
-	</header>
-	<h1>PHENOMENAL</h1>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHENOMENAL</title>
+  </head>
+  <body>
+    {% include 'app_general/components/site_header.html' %}
+    <div>
+      <h1>PHENOMENAL</h1>
+      <p>Phenomenal store is your shop</p>
+    </div>
+    {% include 'app_general/components/site_footer.html' %}
+  </body>
 </html>
