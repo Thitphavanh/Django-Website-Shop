@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ALL BOOKS IN STORE | PHENOMENAL</title>
-</head>
-<body>
-	<header style="background-color: lightpink;">
-		<a href="">PHENOMENAL</a>
-		<a href="">ALL MENU</a>
-		<a href="">ABOUT</a>
-	</header>
-    <div>
-    	<h1>PHENOMENAL</h1>
-    	<p>PHENOMENAL BOOK COULD</p>
-    </div>
-	<footer style="background-color: lightpink;">
-		<h5>ຕິດຕາມຄວາມເຄື່ອນໄຫວ ແລະ ໂປຣໂມຊັ່ນໄດ້ທີ່</h5>
-		<p>
-			<a href="">Facebook</a>
-			<a href="">Instagram</a>
-			<a href="">TikTok</a>
-		</p>
-		<p>Copyright 2018-2022 Phenomenal. All right reserved</p>
-	</footer>
-</body>
-</html>
+{% extends 'app_general/components/base.html' %} {% block site_title %}ALL MENU
+| {% endblock %} {% block content %}
+
+<div>
+  <h2>ມີໜັງສື ໃຫ້ເລືອກຫຼາກຫຼາຍປະເພດ</h2>
+  {% for book in books %}
+  <div style="background-color: rgb(253, 231, 255);">
+    <h3><a href="{% url 'book' book.id %}">{{ book.title }}</a></h3>
+    <p>{{ book.price }} LAK</p>
+    {% if book.is_hardcover %}
+    <p>*** Hardcover Books</p>
+    {% endif %}
+  </div>
+  {% empty %}
+      <p>ບໍ່ມີຂໍມູນ</p>
+  {% endfor %}
+</div>
+
+{% endblock %}
